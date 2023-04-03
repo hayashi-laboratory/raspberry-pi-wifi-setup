@@ -39,7 +39,7 @@ network={
     pairwise=CCMP
     auth_alg=OPEN
     eap=PEAP
-    identity= "ACCOUNT"
+    identity= "USERNAME"
     password=hash:HASH_PWD
     phase1="peaplabel=0"
     phase2="auth=MSCHAPV2"
@@ -47,7 +47,7 @@ network={
 }
 ```
 
-> `ACCOUNT` is your cisco account, ex: s2310146@s.tsukuba.ac.jp  
+> `USERNAME` is your cisco username, ex: s2310146@s.tsukuba.ac.jp  
 > `HASH_PWD` is the hashed password.
 ---
 

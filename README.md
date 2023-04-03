@@ -1,4 +1,4 @@
-# raspberry-pi-wifi-setup
+# raspberry-pi-4b-wifi-setup
 ## A tutorial for setup of wifi-connection to IIIS-Net
 ---
 ## 1. Genearate hash password.
@@ -14,7 +14,7 @@ It will show a string which is the hashed password(`HASH_PWD`) and were use in 2
 > check `iconv -l` to find the correct name.
 
 ---
-## 2. Modify the `/etc/wpa_supplicant/wpa_suplicant.conf`
+## 2. Modify the `/etc/wpa_supplicant/wpa_supplicant.conf`
 
 ```
 cd /etc/wpa_supplicant
@@ -47,7 +47,7 @@ network={
 }
 ```
 
-> `USERNAME` is your cisco username, ex: s2310146@s.tsukuba.ac.jp  
+> `USERNAME` is your cisco username, ex: s1234567@s.tsukuba.ac.jp  
 > `HASH_PWD` is the hashed password.
 ---
 
@@ -72,7 +72,7 @@ env wpa_supplicant_driver=wext,nl80211
 ```
 
 ---
-## 4 Reboot
+## 4 Reboot the system
 
 ```{shell}
 sudo reboot

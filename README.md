@@ -27,6 +27,12 @@ sudo cp wpa_supplicant.conf wpa_supplicant.conf.org
 
 ### 2.2 Edit new `wpa_supplicant.conf`
 
+- Using nano to open the wpa_supplicant.conf
+```
+sudo nano wpa_supplicant.conf
+```
+
+- Editing the content as follow, replacing the `USERNAME` and `HASH_PWD`.
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -39,7 +45,7 @@ network={
     pairwise=CCMP
     auth_alg=OPEN
     eap=PEAP
-    identity= "USERNAME"
+    identity="USERNAME"
     password=hash:HASH_PWD
     phase1="peaplabel=0"
     phase2="auth=MSCHAPV2"
@@ -48,7 +54,7 @@ network={
 ```
 
 > `USERNAME` is your cisco username, ex: s1234567@s.tsukuba.ac.jp  
-> `HASH_PWD` is the hashed password.
+> `HASH_PWD` is the hashed password string from step #1.
 ---
 
 
@@ -57,13 +63,20 @@ network={
 ```
 cd /etc
 ```
-### 3.1 backup the original `dhcpcd.conf` if existed.
+### 3.1 Backup the original `dhcpcd.conf` if existed.
 
 ```
 sudo cp dhcpcd.conf dhcpcd.conf.org
 ```
 
-### 3.2 Add below content to `dhcpcd.conf` file.
+### 3.2 Modify `dhcpcd.conf` file.
+
+- Using nano to open the wpa_supplicant.conf
+```
+sudo nano dhcpcd.conf
+```
+
+- Add below content to `dhcpcd.conf` file
 
 ```
 interface IIIS-Net
@@ -74,7 +87,7 @@ env wpa_supplicant_driver=wext,nl80211
 ---
 ## 4 Reboot the system
 
-```{shell}
+```
 sudo reboot
 ```
 

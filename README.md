@@ -79,7 +79,7 @@ sudo nano dhcpcd.conf
 - Add below content to `dhcpcd.conf` file
 
 ```
-interface IIIS-Net
+interface wlan0
 env ifwireless=1
 env wpa_supplicant_driver=wext,nl80211
 ```

@@ -4,12 +4,12 @@
 ## 1. Genearate hash password.
 
 ```
-echo -n yourpassword | iconv -t UTF-16LE | openssl md4
+echo -n yourpassword | iconv -t UTF-16LE | openssl md4 -provider legacy
 ```
 It will show a string which is the hashed password(`HASH_PWD`) and were use in 2.2.
 > the iconv might have different optional name for UTF-16LE hash, (ex: utf16le)
 > ```
-> echo -n yourpassword | iconv -t utf16le | openssl md4
+> echo -n yourpassword | iconv -t utf16le | openssl md4 -provider legacy
 > ```
 > check `iconv -l` to find the correct name.
 
